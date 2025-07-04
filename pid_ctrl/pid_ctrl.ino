@@ -38,10 +38,14 @@ void setup() {
   Serial.begin(115200);
 
   // PWM設定
+  /*
   ledcSetup(pwmChannelA, pwmFreq, pwmResolution);
   ledcAttachPin(ENA, pwmChannelA);
   ledcSetup(pwmChannelB, pwmFreq, pwmResolution);
   ledcAttachPin(ENB, pwmChannelB);
+  */
+  ledcAttach(ENA, pwmFreq, pwmResolution);
+  ledcAttach(ENB, pwmFreq, pwmResolution);
 
   // モーター方向ピン
   pinMode(IN1, OUTPUT); pinMode(IN2, OUTPUT);
@@ -68,7 +72,7 @@ void sensorTask(void *pvParameters) {
     }
 
     // Serial.print("sensorValues:");
-    Serial.printf("%d %d %d %d %d %d %d %d \n",
+    Serial.printf("%6d %6d %6d %6d %6d %6d %6d %6d \n",
                   sensorValues[0], sensorValues[1], sensorValues[2], sensorValues[3],
                   sensorValues[4], sensorValues[5], sensorValues[6], sensorValues[7]);
 

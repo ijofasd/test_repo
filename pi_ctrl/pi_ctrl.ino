@@ -70,7 +70,7 @@ void sensorTask(void *pvParameters) {
     }
 
     // Serial.print("sensorValues:");
-    Serial.printf("%d %d %d %d %d %d %d %d \n",
+    Serial.printf("%6d %6d %6d %6d %6d %6d %6d %6d \n",
                   sensorValues[0], sensorValues[1], sensorValues[2], sensorValues[3],
                   sensorValues[4], sensorValues[5], sensorValues[6], sensorValues[7]);
 
